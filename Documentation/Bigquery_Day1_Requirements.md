@@ -1,73 +1,25 @@
-CareFlow Clinical Pathway Process Mining
+# BigQuery Setup and Testing
 
-BigQuery Setup and Testing Documentation
+## Purpose
+Set up and explore Google BigQuery for the CareFlow Clinical Pathway Process Mining project to inspect healthcare event-log data and prepare it for further analysis.
 
-1. Purpose of BigQuery
+## Work Completed
+- Explored the Google Cloud project and BigQuery dataset.
+- Loaded and accessed the raw healthcare event-log dataset.
+- Verified the table name and dataset structure.
+- Reviewed column names and data types.
+- Prepared SQL queries to inspect and sort records.
+- Checked the total number of records and investigated missing values in key columns.
+- Performed initial data validation to support further process mining analysis.
 
-Google BigQuery is a cloud-based data warehouse used to store and analyse data using SQL. In the CareFlow project, it is intended to store and inspect raw patient event-log data to support data validation and further process mining analysis.
+## Purpose of Validation
+- Understand the structure of the healthcare event-log dataset.
+- Verify data availability and basic data quality.
+- Identify missing values in important fields.
+- Prepare the dataset for further process mining analysis.
 
-2. Basic Storage Requirements
+## Data Privacy
+Only synthetic or anonymized sample data should be used in this project. No real patient-identifiable information should be uploaded or shared.
 
-The basic requirements for storing raw event-log data in BigQuery include:
-
-- A Google Cloud project.
-- A BigQuery dataset.
-- A table for the raw event-log data.
-- The source CSV file.
-- Appropriate column names and data types.
-- Required permissions to load data and run queries.
-
-3. Testing and Validation
-
-The following SQL queries were used to inspect the data and check its basic structure.
-
-Table Reference:
-"care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway-process-mining"
-
-A. View and sort records
-
-SELECT *
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway-process-mining`
-ORDER BY case_id ASC, event_order ASC;
-
-Purpose: Displays records in ascending order by case ID and event order.
-
-B. Count total rows
-
-SELECT COUNT(*) AS total_rows
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway-process-mining`;
-
-Purpose: Counts the total number of records in the table.
-
-C. View sample records
-
-SELECT *
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway-process-mining`
-LIMIT 10;
-
-Purpose: Displays the first 10 records for inspection.
-
-D. Check missing values
-
-SELECT
-  COUNT(*) AS total_rows,
-  COUNTIF(case_id IS NULL) AS missing_case_id,
-  COUNTIF(event_order IS NULL) AS missing_event_order
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway-process-mining`;
-
-Purpose: Counts total rows and NULL values in the selected columns.
-
-E. Inspect table and schema information
-
-SELECT
-  column_name,
-  data_type
-FROM `care-flow-clinical-pathway.careflow_dataset.INFORMATION_SCHEMA.COLUMNS`
-WHERE table_name = 'care-flow-clinical-pathway-process-mining'
-ORDER BY ordinal_position;
-
-Purpose: Lists the table's column names and data types in column order.
-
-4. Conclusion
-
-This work provided an initial understanding of BigQuery and its role in the CareFlow project. The project and dataset structure were explored, CSV event-log data was loaded into the table, and basic SQL queries were used to inspect records, count rows, check for missing values in selected columns, and review the schema. These checks form an initial step towards validating the raw data before further analysis. The query results and documentation should be reviewed by the team before being finalised and uploaded to GitHub.
+## Outcome
+Completed the initial BigQuery setup and data exploration. Basic SQL queries were prepared to inspect the dataset, review its schema, count records, and check for missing values. The results can be reviewed by the team before proceeding with further analysis.
