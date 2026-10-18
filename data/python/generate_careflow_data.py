@@ -73,7 +73,10 @@ def generate_event_log(patient_count=500):
                 "timestamp": current_time.strftime("%Y-%m-%d %H:%M:%S"),
                 "department": departments[activity],
                 "journey_type": journey_type,
-                "is_loop_back": activity == "Doctor Consultation" and journey.count("Doctor Consultation") > 1,
+               "is_loop_back": (
+    activity == "Doctor Consultation"
+    and journey[:seq].count("Doctor Consultation") > 1
+),
                 "data_source": "synthetic",
             })
 
