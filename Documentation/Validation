@@ -1,1 +1,147 @@
-CareFlow --------
+# CareFlow — Day 1 Data Quality Checklist
+
+## 1. Project Overview
+
+CareFlow is a Clinical Pathway Process Mining project that studies the journey of patients through hospital treatment. The project uses synthetic hospital event-log data to identify delays, bottlenecks, and unusual patient journeys.
+
+The dataset is designed for 500 patients. No real patient information should be used.
+
+## 2. Objective
+
+The objective of this checklist is to identify missing, incorrect, duplicate, or inconsistent data before analysis and further processing in BigQuery and dbt.
+
+## 3. Basic Data Quality Checks
+
+### Check 1: Missing Values
+
+**What to check:** Identify blank or missing values in important columns.
+
+**Example:** A patient event has no Patient ID or Event Timestamp.
+
+**Why it matters:** Missing information can make the patient journey incomplete or difficult to analyse.
+
+**Action:** List the affected rows and determine whether the value can be corrected or whether the row needs further review.
+
+### Check 2: Duplicate Records
+
+**What to check:** Identify repeated event records.
+
+**Example:** The same patient has the same activity recorded twice at the same timestamp.
+
+**Why it matters:** Duplicates can inflate event counts and distort process-mining results.
+
+**Action:** Flag possible duplicates and verify them before removing anything. Repeated activities may be legitimate events.
+
+### Check 3: Invalid Patient IDs
+
+**What to check:** Ensure every event has a valid Patient ID that identifies a patient in the dataset.
+
+**Example:** An event refers to Patient P999, but that patient does not exist in the patient list.
+
+**Why it matters:** Invalid IDs can break the connection between events belonging to the same patient.
+
+**Action:** Flag IDs that are missing, malformed, or not present in the patient reference list.
+
+### Check 4: Invalid Timestamps
+
+**What to check:** Check that event timestamps are present, correctly formatted, and valid.
+
+**Example:** An event contains an unreadable timestamp instead of a valid date and time.
+
+**Why it matters:** Timestamps are essential for calculating treatment durations and identifying delays.
+
+**Action:** Flag invalid timestamps and correct them only when the intended value can be verified.
+
+### Check 5: Incorrect Event Sequence
+
+**What to check:** Review whether a patient's activities occur in a logical chronological order.
+
+**Example:** A discharge event occurs before the patient's admission event.
+
+**Why it matters:** Incorrect event order can produce misleading patient journeys and bottleneck analysis.
+
+**Action:** Flag events with suspicious ordering and investigate the timestamps and activity sequence.
+
+### Check 6: Invalid Activity Names
+
+**What to check:** Check that activities follow the project's agreed activity list.
+
+**Example:** The same activity is recorded as "Lab Test", "Lab_Test", and "Laboratory Test" without an agreed naming rule.
+
+**Why it matters:** Inconsistent activity names can split the same process step into multiple categories.
+
+**Action:** Standardise activity names using the approved activity list while preserving the original values for review if necessary.
+
+### Check 7: Invalid or Missing Durations
+
+**What to check:** If event durations or start and end timestamps are provided, check for negative durations and impossible values.
+
+**Example:** A treatment activity ends before it starts.
+
+**Why it matters:** Incorrect durations can distort waiting-time and treatment-delay analysis.
+
+**Action:** Flag negative or implausible durations for investigation. Do not assume every long duration is an error.
+
+### Check 8: Patient Journey Completeness
+
+**What to check:** Review whether each patient has the expected sequence of activities according to the project's defined journey rules.
+
+**Example:** A patient has a discharge event but no recorded admission event.
+
+**Why it matters:** Incomplete journeys may affect process-mining analysis.
+
+**Action:** Flag incomplete journeys and check whether the missing activity is genuinely absent or was not recorded.
+
+### Check 9: Valid Data Types
+
+**What to check:** Ensure columns use suitable data types.
+
+**Example:** A timestamp is stored as unstructured text, or a duration is stored as text instead of a numeric value.
+
+**Why it matters:** Incorrect data types can cause problems during calculations, loading, and transformation.
+
+**Action:** Record the affected columns and define the expected data types.
+
+### Check 10: Patient Count and Record Count
+
+**What to check:** Verify the number of unique patients and the total number of event records.
+
+**Example:** The project expects 500 patients, but the dataset contains fewer or more unique Patient IDs.
+
+**Why it matters:** Unexpected counts can reveal missing data, generation errors, or duplicate patients.
+
+**Action:** Count unique patients and event records separately. Confirm that the dataset matches the project's documented expectations.
+
+## 4. Data Quality Tracking Table
+
+| Check | Status | Notes |
+|---|---|---|
+| Missing values | Pending | To be checked |
+| Duplicate records | Pending | To be checked |
+| Invalid Patient IDs | Pending | To be checked |
+| Invalid timestamps | Pending | To be checked |
+| Incorrect event sequence | Pending | To be checked |
+| Invalid activity names | Pending | To be checked |
+| Invalid durations | Pending | If duration fields are available |
+| Journey completeness | Pending | Check against agreed journey rules |
+| Valid data types | Pending | To be checked |
+| Patient and record counts | Pending | Verify expected totals |
+
+## 5. Expected Outcome
+
+After the checklist is prepared and applied to the dataset, the team should have:
+
+- A list of potential data-quality issues.
+- A record of checks completed and checks still pending.
+- Clear rules for reviewing suspicious records.
+- A better understanding of whether the dataset is ready for further processing.
+
+## 6. Important Note
+
+This document defines the initial data-quality checks. A check must not be marked as completed until it has actually been performed and its result recorded. The dataset must be reviewed before declaring it clean.
+
+**Day 1 Deliverable:** `documentation/day1_data_quality_checklist.md`
+
+**Owner:** Akshaya
+
+**Project:** CareFlow — Clinical Pathway Process Mining
