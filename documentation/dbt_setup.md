@@ -35,3 +35,19 @@ Documentation started. BigQuery access and the existing raw table details must b
 
 The actual model execution depends on BigQuery access and the availability of the raw event table.
 
+## Raw Event Source Definition
+
+The dbt source should point to the raw hospital event table stored in BigQuery.
+
+Before creating the final source configuration, confirm:
+
+- BigQuery project ID
+- Dataset name
+- Raw table name
+- Actual column names and data types
+
+Expected event fields may include a case identifier, activity name, and event timestamp. These must be checked against the team's actual dataset before implementation.
+
+The source definition will be maintained in the dbt project's YAML configuration.
+
+
