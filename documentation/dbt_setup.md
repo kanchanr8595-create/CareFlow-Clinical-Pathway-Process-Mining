@@ -24,3 +24,14 @@ The team plan uses BigQuery to store raw hospital event data. dbt will transform
 ## Current Status
 
 Documentation started. BigQuery access and the existing raw table details must be confirmed before running the models.
+
+## CareFlow Data Workflow
+
+1. Generate sample hospital events using Python.
+2. Store the raw event data in BigQuery.
+3. Use dbt to standardize and clean the event data.
+4. Validate the transformed data.
+5. Prepare the cleaned event log for process mining.
+
+The actual model execution depends on BigQuery access and the availability of the raw event table.
+
