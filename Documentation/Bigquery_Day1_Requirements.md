@@ -1,7 +1,7 @@
 # BigQuery Setup and Testing
 
 ## Purpose
-Set up and explore Google BigQuery for the CareFlow Clinical Pathway Process Mining project to inspect healthcare event-log data and prepare it for further analysis.
+Set up and explore Google BigQuery for the CareFlow Clinical Pathway Process Mining project to inspect healthcare event-log data and prepare it for further analysis. The raw healthcare event-log dataset contains records of activities performed during patient journeys. Each record represents an event in the patient healthcare process. This data helps us understand the sequence of activities and support further process mining analysis.
 
 ## Work Completed
 - Explored the Google Cloud project and BigQuery dataset.
