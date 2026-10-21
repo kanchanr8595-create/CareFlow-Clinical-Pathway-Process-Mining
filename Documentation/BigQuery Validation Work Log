@@ -1,0 +1,52 @@
+# BigQuery Validation Work Log
+
+## 1. Objective
+
+The purpose of this work is to verify the raw CareFlow clinical pathway event-log table in BigQuery before proceeding with further data analysis and process-mining activities.
+
+## 2. Work Completed
+
+The following tasks have been performed, subject to verification against the executed queries:
+
+- Set up the BigQuery dataset and raw table.
+- Loaded the available CSV data into BigQuery.
+- Retrieved event-log records ordered by `case_id` and `event_order`.
+- Checked the total number of rows in the table.
+- Previewed sample records to inspect the table contents.
+- Checked for missing values in important fields such as `case_id` and `event_order`.
+- Inspected table metadata using `INFORMATION_SCHEMA`.
+- Created SQL files for case-count analysis and duplicate-event checks.
+
+## 3. Validation Objectives
+
+| Check | Purpose |
+|---|---|
+| Row count | Confirm the number of records stored in the table |
+| Sample records | Inspect the structure and values of loaded data |
+| Missing values | Identify records missing important identifiers |
+| Schema inspection | Verify available columns and data types |
+| Case-count analysis | Understand how events are distributed across patient journeys |
+| Duplicate-event checks | Investigate possible duplicate event identifiers |
+| Event ordering | Check whether activities are sequenced correctly within each case |
+
+## 4. Results and Observations
+
+Record the actual results from BigQuery here.
+
+- Total rows: [Enter the query result]
+- Missing case IDs: [Enter the query result]
+- Missing event orders: [Enter the query result]
+- Duplicate event IDs: [Enter the query result]
+- Schema verification: [Record the observed columns and data types]
+- Issues identified: [Describe any actual issues found]
+
+## 5. Next Steps
+
+- Resolve any confirmed data-quality issues.
+- Verify event ordering and timestamp consistency.
+- Continue analysis of patient journeys and activity sequences.
+- Coordinate with the team on downstream cleaning and process-mining preparation.
+
+## 6. Status
+
+This work log records the BigQuery validation workflow. All findings and completion statuses should be updated using actual query outputs and verified project progress.
