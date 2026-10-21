@@ -3,6 +3,27 @@
 ## Purpose
 Set up and explore Google BigQuery for the CareFlow Clinical Pathway Process Mining project to inspect healthcare event-log data and prepare it for further analysis. The raw healthcare event-log dataset contains records of activities performed during patient journeys. Each record represents an event in the patient healthcare process. This data helps us understand the sequence of activities and support further process mining analysis.
 
+## Planned Setup
+
+- Understand the CareFlow Clinical Pathway Process Mining project requirements.
+- Identify the raw healthcare event-log dataset and understand its purpose.
+- Identify the Google Cloud project, BigQuery dataset, and destination table.
+- Review the expected table schema, column names, and data types.
+- Prepare SQL queries to inspect records, count events, check missing values, and validate event ordering.
+- Plan basic data-quality checks to prepare the dataset for further process mining analysis.
+
+## Completed Setup
+
+- Explored the Google Cloud project and BigQuery dataset.
+- Accessed the raw healthcare event-log table.
+- Verified the table name and dataset structure.
+- Reviewed the nine column names and their data types.
+- Executed SQL queries to inspect sample records and review event ordering.
+- Verified that the table contains 3,351 records.
+- Checked missing values in key columns and confirmed that `case_id` and `event_order` each have zero missing values.
+- Previewed the first 10 records.
+- Performed initial data validation to understand the event-log structure and assess data availability for further process mining analysis.
+
 ## Work Completed
 - Explored the Google Cloud project and BigQuery dataset.
 - Loaded and accessed the raw healthcare event-log dataset.
