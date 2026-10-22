@@ -13,8 +13,8 @@ CREATE SCHEMA IF NOT EXISTS
 -- Configure the destination table and schema.
 -- These steps have already been completed through the BigQuery interface.
 
-
 -- STEP 3: CHECK AVAILABLE TABLES
+-- Purpose: List tables available in the CareFlow dataset.
 SELECT
   table_catalog,
   table_schema,
@@ -24,46 +24,76 @@ FROM
 
 
 -- STEP 4: CHECK TABLE COLUMNS AND DATA TYPES
+-- Purpose: Inspect column names, data types, and table structure.
+
 SELECT
   table_name,
   column_name,
   data_type
 FROM
   `care-flow-clinical-pathway.careflow_dataset.INFORMATION_SCHEMA.COLUMNS`
+WHERE
+  table_name = 'care-flow-clinical-pathway- process- mining'
 ORDER BY
-  table_name,
   ordinal_position;
 
 
 -- STEP 5: SORT DATA BY CASE ID AND EVENT ORDER
+-- Purpose: View event records in case and event sequence order.
+
 SELECT *
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`
-ORDER BY case_id ASC, event_order ASC;
+FROM
+  `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`
+ORDER BY
+  case_id ASC,
+  event_order ASC;
 
 
 -- STEP 6: COUNT TOTAL ROWS
-SELECT COUNT(*) AS total_rows
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`;
+-- Purpose: Count all event records in the table.
+
+SELECT
+  COUNT(*) AS total_rows
+FROM
+  `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`;
 
 
 -- STEP 7: VIEW FIRST 10 ROWS
+-- Purpose: Preview sample records from the table.
+
 SELECT *
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`
+FROM
+  `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`
 LIMIT 10;
 
 
 -- STEP 8: CHECK MISSING CASE IDs AND EVENT ORDER
+-- Purpose: Find records missing case IDs or event-order values.
+
 SELECT *
-FROM `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`
-WHERE case_id IS NULL
-   OR event_order IS NULL
+FROM
+  `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`
+WHERE
+  case_id IS NULL
+  OR event_order IS NULL
 LIMIT 100;
 
 
 -- STEP 9: COUNT TOTAL ROWS AND MISSING VALUES
+-- Purpose: Count all rows and identify missing key values.
+
 SELECT
   COUNT(*) AS total_rows,
   COUNTIF(case_id IS NULL) AS missing_case_id,
   COUNTIF(event_order IS NULL) AS missing_event_order
+FROM
+  `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`;
+
+
+-- STEP 10: COUNT DISTINCT CASES / PATIENTS
+-- Purpose: Count unique case IDs in the event-log table.
+
+SELECT
+  COUNT(DISTINCT case_id) AS distinct_cases
 FROM
   `care-flow-clinical-pathway.careflow_dataset.care-flow-clinical-pathway- process- mining`;
