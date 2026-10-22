@@ -1,53 +1,51 @@
+## Dataset Review
 
-# CareFlow dbt Setup
+The CareFlow dataset contains synthetic hospital patient event data.
 
-## Project Overview
+- Dataset file: careflow_synthetic_500_patients.csv
+- Unique patients: 500
+- Event records: 3,351
+- Total columns: 9
+- Missing values detected: 0
+- Exact duplicate rows detected: 0
 
-CareFlow is a clinical pathway process-mining project. The goal is to prepare hospital event data for process analysis.
+These results are based on the initial local CSV review. BigQuery and dbt validation are still pending.
 
-## What Is dbt?
+## Important Event Columns
 
-dbt (data build tool) helps data engineers transform data using SQL models and validate the results with tests.
+- case_id: Identifies each patient's journey.
+- event_id: Identifies an individual event.
+- event_order: Defines the event sequence.
+- activity: Records the activity performed.
+- timestamp: Records when an event occurred.
+- department: Identifies the hospital department.
+- journey_type: Describes the type of patient journey.
+- is_loop_back: Indicates whether an event is a loop-back.
+- data_source: Identifies the source of the data.
 
-## Role of dbt in CareFlow
+## Day 1 Tasks
 
-The team plan uses BigQuery to store raw hospital event data. dbt will transform the raw data into a consistent format for downstream validation and process mining.
+1. Understand the purpose of dbt.
+2. Review the CareFlow CSV structure.
+3. Understand the BigQuery connection requirements.
+4. Document the initial data-quality checks.
+5. Prepare for the initial dbt staging model.
 
-## My Responsibilities
+## Planned Next Steps
 
-- Document dbt setup.
-- Define the raw data source.
-- Build the first staging model.
-- Add suitable data-quality tests.
-- Document execution results and blockers.
+1. Confirm that the raw event table is available in BigQuery.
+2. Obtain the correct BigQuery project, dataset, and table details.
+3. Configure dbt for BigQuery.
+4. Create an initial staging model using SQL.
+5. Add basic data-quality tests.
+6. Compare the transformed data with the raw event data.
 
 ## Current Status
 
-Documentation started. BigQuery access and the existing raw table details must be confirmed before running the models.
+Day 1: Initial documentation and dataset review.
 
-## CareFlow Data Workflow
+Pending: BigQuery connection, dbt project setup, staging model, and test execution.
 
-1. Generate sample hospital events using Python.
-2. Store the raw event data in BigQuery.
-3. Use dbt to standardize and clean the event data.
-4. Validate the transformed data.
-5. Prepare the cleaned event log for process mining.
-
-The actual model execution depends on BigQuery access and the availability of the raw event table.
-
-## Raw Event Source Definition
-
-The dbt source should point to the raw hospital event table stored in BigQuery.
-
-Before creating the final source configuration, confirm:
-
-- BigQuery project ID
-- Dataset name
-- Raw table name
-- Actual column names and data types
-
-Expected event fields may include a case identifier, activity name, and event timestamp. These must be checked against the team's actual dataset before implementation.
-
-The source definition will be maintained in the dbt project's YAML configuration.
+These tasks will be marked complete after verification.
 
 
