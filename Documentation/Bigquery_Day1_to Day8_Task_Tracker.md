@@ -39,19 +39,28 @@
 ## Day 3 — Schema Inspection and SQL Validation
 
 ### Completed Tasks
-- Reviewed the table schema and data types.
-- Retrieved the first 10 sample records.
-- Executed a total row-count query.
-- Checked missing values in `case_id` and `event_order`.
-- Reviewed event records ordered by `case_id` and `event_order`.
 
-### Verified Results
-- **Total records:** 3,351
-- **Sample records retrieved:** 10
-- **Missing `case_id` values:** 0
-- **Missing `event_order` values:** 0
+- Created the BigQuery dataset and set up the raw event-log table.
+- Loaded the CareFlow CSV data into BigQuery.
+- Inspected the available tables and verified the table schema.
+- Prepared SQL queries to inspect and sort event records by `case_id` and `event_order`.
+- Prepared and executed a query to count total event records.
+- Retrieved the first 10 sample records for inspection.
+- Checked for missing `case_id` and `event_order` values.
+- Prepared a query to count distinct cases/patient journeys.
+- Added comments explaining the purpose of each SQL query.
+- Documented the CSV loading procedure and basic validation workflow.
 
-**Status:** Basic SQL validation completed.
+### Results Recorded
+
+- Total records: 3,351
+- Missing `case_id` values: 0
+- Missing `event_order` values: 0
+- Source CSV and BigQuery row counts: 3,351 each; difference: 0
+
+### Status
+
+Initial BigQuery setup, CSV loading documentation, and basic validation query preparation are completed. The distinct-case count and any additional data-quality findings should be recorded using the actual BigQuery query results.
 
 ---
 
