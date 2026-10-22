@@ -82,16 +82,24 @@ Initial BigQuery setup, CSV loading documentation, and basic validation query pr
 ## Day 5 — BigQuery Table Inspection
 
 ### Verified Results
+
 - BigQuery table is accessible.
 - Total records found: 3,351.
 - First 10 records retrieved successfully.
 - No missing `case_id` values found.
 - No missing `event_order` values found.
+- CSV data was loaded successfully into BigQuery.
+- No loading errors or permission issues were reported.
+- The source CSV row count matches the BigQuery table row count: 3,351.
 
-### Pending Task
-- Confirm whether any additional CSV loading attempt was required and document the result only if the attempt was performed.
+### Completed Tasks
 
-**Status:** Basic table inspection completed.
+- Confirmed that the destination table was created.
+- Verified the loaded row count.
+- Previewed sample records.
+- Documented the CSV loading procedure and validation results.
+
+**Status:** Day 5 — BigQuery Table Inspection completed.
 
 ---
 
