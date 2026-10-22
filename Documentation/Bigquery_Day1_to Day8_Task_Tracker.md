@@ -58,16 +58,15 @@
 ## Day 4 — Data Loading and Validation Review
 
 ### Completed Tasks
+
 - Inspected the existing BigQuery table.
 - Recorded the schema and row-count results.
 - Reviewed missing-value checks for key columns.
+- Documented the CSV loading procedure.
+- Compared source CSV and BigQuery row counts; both contained 3,351 data rows.
+- Confirmed that no loading errors or permission issues were encountered.
 
-### Pending Tasks
-- Compare source and destination row counts, if the source CSV is available.
-- Confirm and document the actual CSV loading method.
-- Record any loading errors or blockers, if applicable.
-
-**Status:** Existing table inspection completed; loading verification remains pending.
+**Status:** BigQuery table inspection, CSV loading documentation, row-count comparison, and basic validation checks completed. Further data-quality checks may be performed as required.
 
 ---
 
