@@ -35,14 +35,6 @@
 - Documented the existing BigQuery table details.
 - Recorded available row-count and missing-value validation results.
 
-### Pending Tasks
-- Document the actual CSV loading procedure, if not already recorded.
-- Compare the source CSV row count with the BigQuery table row count, if the source file is available.
-- Record any actual loading errors or permission issues, if encountered.
-
-**Status:** Schema documentation completed; additional loading verification remains pending.
-
----
 
 ## Day 3 — Schema Inspection and SQL Validation
 
