@@ -33,6 +33,20 @@ Set up and explore Google BigQuery for the CareFlow Clinical Pathway Process Min
 - Checked the total number of records and investigated missing values in key columns.
 - Performed initial data validation to support further process mining analysis.
 
+## CSV Data Loading Procedure
+
+1. Open Google Cloud Console and navigate to BigQuery.
+2. Select the Google Cloud project `care-flow-clinical-pathway`.
+3. Open the dataset `careflow_dataset`.
+4. Load the available CareFlow CSV event-log data into the raw BigQuery table.
+5. Verify the destination table and its available columns.
+6. Run a sample query to confirm that records can be retrieved successfully.
+7. Check the BigQuery load-job status and confirm whether any loading errors were reported.
+
+### Loading Status
+
+CSV loading was completed successfully, and no loading errors were reported.
+
 ## Purpose of Validation
 - Understand the structure of the healthcare event-log dataset.
 - Verify data availability and basic data quality.
