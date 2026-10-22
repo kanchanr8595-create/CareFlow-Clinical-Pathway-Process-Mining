@@ -1,0 +1,52 @@
+# CareFlow — Day 5: dbt Implementation Checklist
+
+## 1. Objective
+
+Prepare a step-by-step checklist for implementing and verifying the CareFlow dbt workflow.
+
+## 2. Step 1: Confirm Prerequisites
+
+- [ ] Confirm the BigQuery raw table is available.
+- [ ] Obtain the correct project ID, dataset ID, and table name.
+- [ ] Confirm authorized access to BigQuery.
+- [ ] Set up the dbt development environment.
+- [ ] Configure the connection securely.
+
+## 3. Step 2: Configure the Source
+
+- [ ] Define the raw event table as a dbt source.
+- [ ] Confirm the source column names.
+- [ ] Verify the source configuration against the actual BigQuery table.
+
+## 4. Step 3: Create the Staging Model
+
+Planned model: stg_careflow_events
+
+- [ ] Select the required event-log columns.
+- [ ] Standardize column names.
+- [ ] Apply appropriate data types.
+- [ ] Preserve patient IDs and event sequence.
+- [ ] Preserve valid loop-back information.
+
+## 5. Step 4: Add Data-Quality Tests
+
+- [ ] Test required fields for null values.
+- [ ] Test event ID uniqueness if required by the source design.
+- [ ] Validate timestamp values.
+- [ ] Check event sequence within each patient journey.
+- [ ] Validate Boolean values in is_loop_back.
+
+## 6. Step 5: Execute and Verify
+
+- [ ] Run the dbt model.
+- [ ] Review execution results.
+- [ ] Run configured data-quality tests.
+- [ ] Compare raw and transformed record counts.
+- [ ] Investigate unexpected differences.
+- [ ] Save evidence of successful execution.
+
+## 7. Current Status
+
+Day 5: Implementation checklist prepared.
+
+Actual dbt implementation and execution remain pending until the BigQuery table and development environment are ready.
