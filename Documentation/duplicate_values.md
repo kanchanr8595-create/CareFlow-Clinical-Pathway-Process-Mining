@@ -13,22 +13,25 @@ we need to check three important things in our CSV dataset:
 First, upload your careflow_synthetic_500_patients.csv file to your notebook and run:
 
 1.pd.read_csv() loads your dataset.
+
 2.df.head() displays the first five records.
+
 3.df.shape tells you the number of rows and columns.
+
 4.df.columns displays all column name
 
 
-1.df.duplicated() checks whether entire rows are repeated.
+a.df.duplicated() checks whether entire rows are repeated.
 
-2.event_id should normally identify each event uniquely.
+b.event_id should normally identify each event uniquely.
 
-3.The combination of case_id and event_order helps identify repeated event positions within a patient's journey.
+c.The combination of case_id and event_order helps identify repeated event positions within a patient's journey.
 
 For your dataset, the results are:
-Check                                        Result
-Complete duplicate rows                        0
-Duplicate event IDs                            0
-Duplicate case ID + event order combinations   0
+Check                                           Result
+Complete duplicate rows                           0
+Duplicate event IDs                               0
+Duplicate case ID + event order combinations      0
 
 
 Observation: No duplicates were detected in these checks. This is a good result for your data-validation task.
