@@ -112,11 +112,6 @@ Initial BigQuery setup, CSV loading documentation, and basic validation query pr
 - Recorded row-count, sample-data, and missing-value results.
 - Prepared setup and validation documentation.
 
-### Remaining Checks
-- Confirm source-to-destination row-count consistency.
-- Check for unresolved data-loading issues.
-- Review the team checklist and update the status of each requirement.
-
 **Status:** Initial setup and validation work documented.
 
 ---
@@ -145,12 +140,6 @@ Initial BigQuery setup, CSV loading documentation, and basic validation query pr
 - Confirmed that sample records were retrieved successfully.
 - Prepared the existing setup, schema, and validation documentation.
 
-### Handover Notes
-- Share the existing schema and validation documents with the team.
-- Identify any remaining data-loading or data-quality checks.
-- Document unresolved issues and next steps.
-- Confirm the final task status with the team leader.
-
 ---
 
 ## Overall Status
@@ -164,11 +153,5 @@ The initial BigQuery exploration, schema documentation, and basic SQL validation
 - **Missing `event_order` values:** 0
 - **Sample records:** 10 retrieved successfully
 
-### Remaining Actions
-- Verify source-to-destination row-count consistency, if the source CSV is available.
-- Confirm the actual CSV loading procedure.
-- Perform and document the additional event-data consistency checks.
-- Update pending items based on the actual results.
-- Confirm completion with the team leader.
 
-**Final Note:** Only mark the remaining checks as completed after verifying the actual work and results in BigQuery.
+
