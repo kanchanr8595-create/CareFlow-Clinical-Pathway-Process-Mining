@@ -1,0 +1,21 @@
+
+WITH source_data AS (
+    SELECT *
+    FROM {{ source('careflow', 'raw_events') }}
+),
+
+standardized AS (
+    SELECT
+        NULLIF(TRIM(CAST(patient_id AS STRING)), '') AS patient_id,
+        NULLIF(TRIM(CAST(activity AS STRING)), '') AS activity,
+        SAFE_CAST(`timestamp` AS TIMESTAMP) AS event_timestamp,
+        NULLIF(TRIM(CAST(department AS STRING)), '') AS department
+    FROM source_data
+)
+
+SELECT
+    patient_id,
+    activity,
+    event_timestamp,
+    department
+FROM standardized
