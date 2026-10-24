@@ -1,0 +1,35 @@
+
+WITH staged_events AS (
+    SELECT *
+    FROM {{ ref('stg_careflow_events') }}
+),
+
+valid_events AS (
+    SELECT *
+    FROM staged_events
+    WHERE patient_id IS NOT NULL
+      AND activity IS NOT NULL
+      AND event_timestamp IS NOT NULL
+),
+
+deduplicated_events AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                patient_id,
+                activity,
+                event_timestamp,
+                department
+            ORDER BY event_timestamp
+        ) AS row_num
+    FROM valid_events
+)
+
+SELECT
+    patient_id,
+    activity,
+    event_timestamp,
+    department
+FROM deduplicated_events
+WHERE row_num = 1
