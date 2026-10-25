@@ -1,0 +1,11 @@
+ 
+version: 2
+
+sources:
+  - name: careflow
+    database: care-flow-clinical-pathway
+    schema: careflow_dataset
+    tables:
+      - name: raw_events
+        identifier: "care-flow-clinical-pathway- process- mining"
+
