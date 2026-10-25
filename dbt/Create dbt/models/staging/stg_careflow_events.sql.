@@ -4,18 +4,21 @@ WITH source_data AS (
     FROM {{ source('careflow', 'raw_events') }}
 ),
 
-standardized AS (
+cleaned AS (
     SELECT
-        NULLIF(TRIM(CAST(patient_id AS STRING)), '') AS patient_id,
-        NULLIF(TRIM(CAST(activity AS STRING)), '') AS activity,
-        SAFE_CAST(`timestamp` AS TIMESTAMP) AS event_timestamp,
-        NULLIF(TRIM(CAST(department AS STRING)), '') AS department
+        NULLIF(TRIM(case_id), '') AS case_id,
+        NULLIF(TRIM(event_id), '') AS event_id,
+        event_order,
+        NULLIF(TRIM(activity), '') AS activity,
+        SAFE_CAST(timestamp AS TIMESTAMP) AS event_timestamp,
+        NULLIF(TRIM(department), '') AS department,
+        NULLIF(TRIM(journey_type), '') AS journey_type,
+        is_loop_back,
+        NULLIF(TRIM(data_source), '') AS data_source
     FROM source_data
 )
 
-SELECT
-    patient_id,
-    activity,
-    event_timestamp,
-    department
-FROM standardized
+SELECT *
+FROM cleaned
+
+
