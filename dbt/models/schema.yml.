@@ -1,0 +1,36 @@
+
+version: 2
+
+models:
+  - name: stg_careflow_events
+    columns:
+      - name: case_id
+        tests:
+          - not_null
+      - name: event_id
+        tests:
+          - not_null
+      - name: event_order
+        tests:
+          - not_null
+      - name: activity
+        tests:
+          - not_null
+      - name: event_timestamp
+        tests:
+          - not_null
+
+  - name: clean_careflow_events
+    columns:
+      - name: case_id
+        tests:
+          - not_null
+      - name: event_id
+        tests:
+          - not_null
+      - name: activity
+        tests:
+          - not_null
+      - name: event_timestamp
+        tests:
+          - not_null
