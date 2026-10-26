@@ -34,4 +34,4 @@ Duplicate event IDs                               0
 Duplicate case ID + event order combinations      0
 
 
-Observation: No duplicates were detected in these checks. This is a good result for your data-validation task.
+Observation: No duplicates were detected in these checks. This is a good result.
