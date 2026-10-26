@@ -7,5 +7,5 @@ sources:
     schema: careflow_dataset
     tables:
       - name: raw_events
-        identifier: REPLACE_WITH_EXACT_RAW_TABLE_NAME
+        identifier: "care-flow-clinical-pathway- process- mining"
         description: "Raw CareFlow patient event data stored in BigQuery."
