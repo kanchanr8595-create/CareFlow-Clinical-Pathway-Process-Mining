@@ -12,11 +12,11 @@ we need to check three important things in our CSV dataset:
 
 First, upload your careflow_synthetic_500_patients.csv file to your notebook and run:
 
-1.pd.read_csv() loads your dataset.
+1.pd.read_csv() loads our dataset.
 
 2.df.head() displays the first five records.
 
-3.df.shape tells you the number of rows and columns.
+3.df.shape tells us the number of rows and columns.
 
 4.df.columns displays all column name
 
@@ -27,7 +27,7 @@ b.event_id should normally identify each event uniquely.
 
 c.The combination of case_id and event_order helps identify repeated event positions within a patient's journey.
 
-For your dataset, the results are:
+For this dataset, the results are:
 Check                                           Result
 Complete duplicate rows                           0
 Duplicate event IDs                               0
