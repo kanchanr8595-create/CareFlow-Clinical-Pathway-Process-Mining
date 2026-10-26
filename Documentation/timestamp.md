@@ -2,7 +2,7 @@ CareFlow-Clinical-pathway-Process
 
 In this dataset has a timestamp column containing date and time values, such as 2026-09-11 09:54:00.
 
-Pandas helps us to read this column as a text
+Timestamp Validation: Converted the timestamp column from text to Pandas datetime format. No invalid timestamps were identified. The timestamps were also checked for chronological consistency within each patient's journey, and no backward timestamp sequences were detected.
 
 checks and validation done here are:
 
