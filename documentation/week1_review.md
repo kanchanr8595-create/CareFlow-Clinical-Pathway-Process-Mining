@@ -23,9 +23,9 @@ No real patient data is used.
 | 500-patient CSV present in repository | Added |
 | Patient journey documentation | Added |
 | Dataset schema documentation | Added |
-| Sample generation for 10–20 patients | Pending execution |
-| Python generator output verification | Pending |
-| Actual data-quality validation results | Pending confirmation |
+| Sample generation for 10–20 patients | Added |
+| Python generator output verification | Added |
+| Actual data-quality validation results | Added |
 | BigQuery loading and table verification | Awaiting confirmation |
 | dbt setup and model execution | Awaiting confirmation |
 
