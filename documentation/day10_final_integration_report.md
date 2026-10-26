@@ -43,8 +43,6 @@ The objective of Day 10 is to review the available project files, verify the pro
 - Data-quality checklist.
 - Missing-value and duplicate-event validation scripts.
 - Timestamp-validation documentation and scripts.
-
-### Pending Tasks
 - Correct timestamp parsing in the validation script.
 - Execute missing-value, duplicate-event, and timestamp-order checks.
 - Record actual findings and validation outputs.
