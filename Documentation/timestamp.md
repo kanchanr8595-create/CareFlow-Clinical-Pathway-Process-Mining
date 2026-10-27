@@ -8,11 +8,11 @@ checks and validation done here are:
 
 
   # VALIDATION                                       RESULT
-## a.Timestamp Conversion                           Successful
-## b.Invalid timestamps                             0
-## c.Earliest timestamps                            1 september 2026,09:16
-## d.Latest timestamp                               15 september 2026,04:11
-## e.Final data type                                datetime64[ns]
+## a.Timestamp Conversion--                          Successful
+## b.Invalid timestamps--                               0
+## c.Earliest timestamps--                           1 september 2026,09:16
+## d.Latest timestamp--                              15 september 2026,04:11
+## e.Final data type--                               datetime64[ns]
 
 
 # In our project,timestamps helps us:
