@@ -7,7 +7,7 @@ In this dataset has a timestamp column containing date and time values, such as 
 checks and validation done here are:
 
 
-  # VALIDATION                                  RESULT
+  # VALIDATION                                       RESULT
 ## a.Timestamp Conversion                           Successful
 ## b.Invalid timestamps                             0
 ## c.Earliest timestamps                            1 september 2026,09:16
