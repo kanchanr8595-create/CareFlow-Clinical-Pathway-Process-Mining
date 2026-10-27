@@ -4,11 +4,11 @@ CareFlow-Clinical-Pathway-Process-Mining
 For our CareFlow – Clinical Pathway Process Mining project, 
 we need to check three important things in our CSV dataset:
 
-1.Duplicate values — whether the same records appear more than once.
+# 1.Duplicate values — whether the same records appear more than once.
 
-2.Missing values — whether any cells are empty or contain null values.
+# 2.Missing values — whether any cells are empty or contain null values.
 
-3.Timestamp coding — whether date and time columns are stored correctly and can be used for process mining.
+# 3.Timestamp coding — whether date and time columns are stored correctly and can be used for process mining.
 
 First, upload your careflow_synthetic_500_patients.csv file to your notebook and run:
 
@@ -34,4 +34,4 @@ Duplicate event IDs                               0
 Duplicate case ID + event order combinations      0
 
 
-Observation: No duplicates were detected in these checks. This is a good result.
+Observation: No duplicates were detected in these checks.
