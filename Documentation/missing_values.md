@@ -20,8 +20,8 @@ Objective: To assess the quality and consistency of the clinical pathway event l
 
 
 
-Observation: No missing values were detected in any column. Therefore, you do not need to fill or remove missing values at this stage.
+## Observation: No missing values were detected in any column. Therefore, no need to fill or remove missing values at this stage.
 
-Note: isnull() detects standard missing values such as NaN and None. If your data uses empty strings or text such as "NA" to represent missing values, those should be checked separately.
+## Note: isnull() detects standard missing values such as NaN and None. If your data uses empty strings or text such as "NA" to represent missing values, those should be checked separately.
 
-Missing Value Validation: Examined all nine columns for missing values. No missing values were detected across the 3,351 records.
+## Missing Value Validation: Examined all nine columns for missing values. No missing values were detected across the 3,351 records.
