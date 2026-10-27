@@ -24,11 +24,11 @@ a.event_id should normally identify each event uniquely.
 
 b.The combination of case_id and event_order helps identify repeated event positions within a patient's journey.
 
-For this dataset, the results are:
-Check                                           Result
-Complete duplicate rows                           0
-Duplicate event IDs                               0
-Duplicate case ID + event order combinations      0
+ For this dataset, the results are:
+## Check                                               Result
+## 1.Complete duplicate rows                           0
+## 2.Duplicate event IDs                               0
+## 3.Duplicate case ID + event order combinations      0
 
 
 Observation: No duplicates were detected in these checks.
