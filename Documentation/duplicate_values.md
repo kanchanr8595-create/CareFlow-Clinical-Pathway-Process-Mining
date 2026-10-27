@@ -1,5 +1,3 @@
-CareFlow-Clinical-Pathway-Process-Mining
-
 
 For our CareFlow – Clinical Pathway Process Mining project, 
 we need to check three important things in our CSV dataset:
@@ -12,20 +10,19 @@ we need to check three important things in our CSV dataset:
 
 First, upload your careflow_synthetic_500_patients.csv file to your notebook and run:
 
-1.pd.read_csv() loads our dataset.
+## 1.pd.read_csv() loads our dataset.
 
-2.df.head() displays the first five records.
+## 2.df.head() displays the first five records.
 
-3.df.shape tells us the number of rows and columns.
+## 3.df.shape tells us the number of rows and columns.
 
-4.df.columns displays all column name
+## 4.df.columns displays all column name
 
+## 5.df.duplicated() checks whether entire rows are repeated.
 
-a.df.duplicated() checks whether entire rows are repeated.
+a.event_id should normally identify each event uniquely.
 
-b.event_id should normally identify each event uniquely.
-
-c.The combination of case_id and event_order helps identify repeated event positions within a patient's journey.
+b.The combination of case_id and event_order helps identify repeated event positions within a patient's journey.
 
 For this dataset, the results are:
 Check                                           Result
