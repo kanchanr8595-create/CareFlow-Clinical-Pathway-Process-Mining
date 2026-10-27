@@ -109,6 +109,7 @@ The project workflow may use the following tools, depending on the team's implem
 - Matplotlib and Seaborn: Data visualization.
 - Jupyter Notebook or Google Colab: Executing and documenting Python analysis.
 - GitHub: Storing and sharing the project dataset, source code, and documentation.
+- dbt(data build tool):Transforming raw data into structured,  analysis-ready datasets using SQL models and implementing data quality test.
 - Power BI: Developing interactive dashboards, if used by the team.
 
  # 6. Expected Outcomes
