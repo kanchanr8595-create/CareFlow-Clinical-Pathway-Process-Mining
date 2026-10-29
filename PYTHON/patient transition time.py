@@ -54,3 +54,5 @@ print(long_gaps[
         "transition_minutes"
     ]
 ])
+# Count AFFECTED PATIENT CASES
+print("\n Number of unique cases requiring reviews:",long_gaps["case_id"].nunique())
