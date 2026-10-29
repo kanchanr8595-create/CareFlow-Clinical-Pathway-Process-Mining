@@ -1,0 +1,62 @@
+# CareFlow — Week 3 Day 1 Integration Review
+
+## 1. Objective
+
+The objective of Day 1 was to review the work completed during Weeks 1 and 2 and verify the availability of the existing project components before starting Week 3 bottleneck analysis.
+
+## 2. Python Event Generator and Synthetic Data
+
+- The Python event generator and patient journey logic were reviewed.
+- The synthetic event log was checked for the required patient, activity, and timestamp information.
+- The patient journey logic for normal, delayed, loop-back, and complex journeys was reviewed.
+- The synthetic dataset was checked for availability and structure.
+
+**Status: Completed**
+
+## 3. BigQuery Integration
+
+- The BigQuery dataset and raw event-log table were reviewed.
+- The CSV loading status was checked.
+- The table structure and available query results were reviewed.
+- BigQuery was identified as the storage and query layer for the event-log data.
+
+**Status: Completed**
+
+## 4. dbt Data Preparation
+
+- The existing dbt configuration and staging models were reviewed.
+- The data-cleaning and standardization logic was checked.
+- Available data-quality tests and cleaned output were reviewed.
+
+**Status: Completed**
+
+## 5. PM4Py Process Discovery
+
+- The available process discovery code and outputs were reviewed.
+- The process map was checked to understand patient activities and transitions.
+- The existing process discovery work was reviewed before proceeding to bottleneck analysis.
+
+**Status: Completed**
+
+## 6. Integration Review
+
+The existing project components were reviewed according to the planned workflow:
+
+**Python → BigQuery → dbt → PM4Py → Power BI**
+
+The review focused on confirming the availability of existing work, identifying any remaining dependencies, and preparing the project for Week 3 bottleneck calculations.
+
+**Status: Completed**
+
+## 7. Day 1 Outcome
+
+The review of the existing Week 1 and Week 2 work has been completed. The project is ready to proceed to Week 3 Day 2, which focuses on calculating average transition times between consecutive patient activities using SQL or Python.
+
+The next step is to identify transitions with longer waiting times and investigate potential bottlenecks using the event-log data.
+
+## 8. Next Steps
+
+- Calculate average transition times between consecutive activities.
+- Identify transitions that may require bottleneck investigation.
+- Compare transition-time results with the discovered process map.
+- Record the actual results and findings for further analysis.
