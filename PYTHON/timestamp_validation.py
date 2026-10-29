@@ -3,27 +3,40 @@ import pandas as pd
 
 df = pd.read_csv(r"/content/careflow_synthetic_500_patients.csv")
 
-
-# Sort events by patient and event order
-df = df.sort_values(["case_id", "event_order"])
-
-# Compare each timestamp with the previous event
-df["time_difference"] = (
-    df.groupby("case_id")["timestamp"].diff()
+# Sort events by patient and recorded event order
+df["event_order_num"] = pd.to_numeric(
+    df["event_order"],
+    errors="coerce"
 )
 
-# Find events where time moves backwards
-backward_events = df[df["time_difference"] < pd.Timedelta(0)]
+df_sorted = df.sort_values(
+    ["case_id", "event_order_num"]
+).copy()
 
-print("Backward timestamp sequences:", len(backward_events))
-print(backward_events[
-    ["case_id", "event_order", "activity",
-     "timestamp", "time_difference"]
+# Get the previous event timestamp for each patient
+df_sorted["previous_timestamp"] = (
+    df_sorted.groupby("case_id")["timestamp"]
+    .shift(1)
+)
+
+# Find timestamps that move backward
+backward_timestamps = df_sorted[
+    df_sorted["timestamp"]
+    < df_sorted["previous_timestamp"]
+]
+
+print("Backward timestamp sequences:")
+print(backward_timestamps[
+    [
+        "case_id",
+        "event_order",
+        "activity",
+        "previous_timestamp",
+        "timestamp"
+    ]
 ])
 
-
-df = df.drop(columns=["time_difference"], errors="ignore")
-
-df.to_csv("careflow_validated.csv", index=False)
-
-print("Validated CSV saved successfully!")
+print(
+    "\nNumber of backward timestamp sequences:",
+    len(backward_timestamps)
+)
