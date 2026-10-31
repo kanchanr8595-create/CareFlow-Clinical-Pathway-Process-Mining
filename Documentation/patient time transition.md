@@ -45,3 +45,6 @@ These longer gaps are concentrated in the activity pairs above. Investigate the 
 ## BigQuery SQL template
 
 Replace `project_id.dataset_id.table_name` with the team's actual BigQuery table. The CSV uses lowercase column names (`case_id`, `activity`, `timestamp`), so this template follows that schema. `SAFE_CAST` handles the possibility that `timestamp` is stored as a string; rows that fail parsing should be checked separately.
+
+## Conclusion
+The local CSV analysis produced 2,851 transitions. The observed average is 55.65 minutes, median is 46 minutes, and maximum is 240 minutes. There are no negative or zero transitions. 87 transitions exceed 180 minutes and should be reviewed in context.
