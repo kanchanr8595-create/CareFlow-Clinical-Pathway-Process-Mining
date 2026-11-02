@@ -48,3 +48,10 @@ These fields support the downstream clinical pathway event sequence. Final outpu
 
 ## 7. Day 1 Outcome
 The staging transformation and integration requirements have been reviewed. Successful execution and data validation will be recorded after the corresponding checks are confirmed.
+## Week 3 – Day 2: dbt Data Verification
+
+- Reviewed the existing dbt staging model.
+- Verified Case_ID, Activity_Name and Timestamp fields.
+- Checked timestamp availability for patient transition analysis.
+- Prepared clean event data for further BigQuery analysis.
+- Transition-time calculations are handled by the BigQuery team.
