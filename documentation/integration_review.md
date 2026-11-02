@@ -60,4 +60,10 @@ The staging transformation and integration requirements have been reviewed. Succ
 - Checked patient IDs, activity names and timestamps.
 - Confirmed that standardized event data can support bottleneck analysis.
 - BigQuery transition-time results will be used to investigate possible delays.
-- Actual bottlenecks must be confirmed using query results.
+- Actual bottlenecks must be confirmed using query results.                                                                                                                                                                                                                                                                                                ## Week 3 – Day 4: PM4Py Data Verification
+
+- Reviewed the dbt staging model output.
+- Checked Case_ID, Activity_Name and Timestamp fields.
+- Verified that standardized event data is suitable for process mining input.
+- Patient event ordering can be used to study journey paths and loop-backs.
+- PM4Py process map results require separate verification.
