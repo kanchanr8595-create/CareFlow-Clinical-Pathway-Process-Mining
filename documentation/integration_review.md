@@ -54,4 +54,10 @@ The staging transformation and integration requirements have been reviewed. Succ
 - Verified Case_ID, Activity_Name and Timestamp fields.
 - Checked timestamp availability for patient transition analysis.
 - Prepared clean event data for further BigQuery analysis.
-- Transition-time calculations are handled by the BigQuery team.
+- Transition-time calculations are handled by the BigQuery team.                                                                                                             ## Week 3 – Day 3: Bottleneck Analysis Support
+
+- Reviewed the dbt staging model for clean event data.
+- Checked patient IDs, activity names and timestamps.
+- Confirmed that standardized event data can support bottleneck analysis.
+- BigQuery transition-time results will be used to investigate possible delays.
+- Actual bottlenecks must be confirmed using query results.
