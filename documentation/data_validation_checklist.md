@@ -31,3 +31,22 @@ These checks are planned but have not yet been confirmed through an executed val
 ## 5. Expected Outcome
 
 A documented list of data-quality checks and verified results that can support the CareFlow data preparation workflow.
+
+## Week 3 - Day 1: Actual Data Validation Results
+
+### Dataset Overview
+- Total Patients: 500
+- Total Event Rows: 3,351
+- Dataset Type: Synthetic
+
+### Validation Results
+| Validation Check | Actual Result |
+|---|---:|
+| Missing Values | 0 |
+| Duplicate Event IDs | 0 |
+| Invalid Timestamps | 0 |
+| Duplicate Patient/Event Order Pairs | 0 |
+| Events Out of Chronological Order | 0 |
+
+### Conclusion
+The dataset passed the above validation checks. No missing values, duplicate event IDs, invalid timestamps, duplicate patient-event order pairs, or chronological ordering issues were found.
