@@ -1,35 +1,16 @@
-# Week 3 - Day 2: Event Ordering Review
+## Day 2 Progress Summary
 
-## 1. Objective
-To review the sequence of patient events and understand the order in which hospital activities occur.
+### Documentation Completed
+- Event ordering review documentation created.
+- Expected patient journey documented.
+- Process map review points documented.
 
-## 2. Expected Patient Journey
-Registration → Triage → Doctor Consultation → Lab Test → Treatment → Discharge
+### Pending Verification
+- Manual verification of sample patient journeys.
+- Actual transition-time calculation.
+- BigQuery transition results comparison.
+- PM4Py process map verification.
+- Bottleneck identification using actual results.
 
-## 3. Event Ordering Checks
-
-- [ ] Verify that patient events follow the correct sequence.
-- [ ] Check timestamps for chronological order.
-- [ ] Identify repeated activities.
-- [ ] Review loop-back journeys.
-- [ ] Identify unusual event sequences.
-
-## 4. Transition Review
-
-The time between consecutive hospital activities needs to be analysed to identify possible delays.
-
-## 5. Observations
-
-Actual observations are pending manual review of patient event records.
-
-## 6. Pending Work
-
-- Complete sample patient event sequence verification.
-- Calculate transition times.
-- Review unusually long transitions.
-- Compare Python analysis with BigQuery SQL results.
-- Compare findings with the PM4Py process map.
-
-## 7. Conclusion
-
-The event ordering review has been documented. Actual verification and transition-time analysis are pending.
+### Conclusion
+Day 2 documentation has been prepared. Actual data-based verification and comparison activities remain pending.
